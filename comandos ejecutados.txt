@@ -1,0 +1,11 @@
+1)docker network create aforo255-test
+
+PAY
+2)docker run -p 3307:3306  --name microservicio-mysql82 --network aforo255-test -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=db_operation -d mysql:8​
+
+INVOIC
+3)docker run -p 5432:5432 --name  postgres122 --network aforo255-test -e POSTGRES_PASSWORD=123456 -e  POSTGRES_DB=db_invoice -d postgres:12-alpine
+
+
+TRANSACTION
+4)docker run -p 27018:27017 --network aforo255-test --name mongodb2 -d mongo
